@@ -109,3 +109,46 @@ int factre(int n)
 
 //Linked Lists
 
+//initialisation of Node
+
+struct Node{
+    int data;
+    //struct node* left;
+    //struct node* right;
+    struct Node* next;
+};
+
+//insertion at the beginning
+
+struct Node * insertatbegin(struct Node *head, int data){
+    struct Node * ptr = (struct Node *)malloc (sizeof(struct Node));
+    ptr->data=data;
+    ptr->next=head;
+    return ptr;
+}
+
+//insert at end
+
+struct Node * insertEnd(struct Node *head, int data){
+    struct Node * ptr = (struct Node *)malloc (sizeof(struct Node));
+    ptr->data = data;
+    struct Node * p = head;
+    
+    while (p->next!=NULL){
+        p=p->next;
+    }
+    p->next=ptr;
+    ptr->next=NULL;
+    return head;
+}
+
+//insert after node or in the middle
+struct Node * insertAfter(struct Node *head, struct Node *prevNode, int data){
+    struct Node * ptr = (struct Node *)malloc (sizeof(struct(Node));
+    ptr->data = data;
+    ptr->next = prevNode->next;
+    prevNode->next = ptr;
+                                               
+    return head;
+                                               }
+                                               
